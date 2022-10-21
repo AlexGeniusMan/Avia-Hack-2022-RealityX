@@ -16,8 +16,8 @@ jobs:
       - name: Transfer stack config to VM
         uses: appleboy/scp-action@master
         with:
-          host: ${{ secrets.DEV_HOST }}
-          username: ${{ secrets.USERNAME }}
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.HOST_USERNAME }}
           password: ${{ secrets.HOST_PASSWORD }}
           port: "22"
           source: "docker-compose.production.yml"
@@ -26,8 +26,8 @@ jobs:
       - name: Deploy stack
         uses: appleboy/ssh-action@v0.1.4
         with:
-          host: ${{ secrets.DEV_HOST }}
-          username: ${{ secrets.USERNAME }}
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.HOST_USERNAME }}
           password: ${{ secrets.HOST_PASSWORD }}
           script: |
             cd /home/avia
