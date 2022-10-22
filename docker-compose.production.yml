@@ -13,6 +13,8 @@ services:
       - frontend
   frontend:
     image: avia_frontend
+  ml:
+    image: avia_ml
   backend:
     image: avia_backend
     volumes:
