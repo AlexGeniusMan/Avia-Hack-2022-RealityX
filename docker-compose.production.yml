@@ -10,9 +10,9 @@ services:
       - backend_static_django:/usr/src/project/static_django
     depends_on:
       - backend
-#      - frontend
-#  frontend:
-#    image: avia_frontend
+      - frontend
+  frontend:
+    image: avia_frontend
   backend:
     image: avia_backend
     volumes:
